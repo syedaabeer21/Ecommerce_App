@@ -36,12 +36,11 @@ export default function ButtonAppBar() {
             My Products
           </Typography>
        <Box>
-       <ShoppingCartIcon sx={{marginRight: '10px', position:'relative'}} />
-       <Typography sx={{position:'absolute', top:5, right:245 , borderRadius:'30px', backgroundColor:'red', paddingLeft:'4px', paddingRight:'4px'   }}>{selector.length}</Typography>
+       <ShoppingCartIcon onClick={moveCart} sx={{marginRight: '10px', position:'relative' }} />
+       <Typography sx={{position:'absolute', top:6, right:180 , borderRadius:'20px', backgroundColor:'red' ,paddingX:1, fontSize:14   }}>{selector.length}</Typography>
        </Box>
           <Button color="inherit">Login</Button>
           <Button color="inherit">Register</Button>
-          <Button onClick={moveCart} color="inherit">Cart</Button>
         </Toolbar>
       </AppBar>
     </Box>

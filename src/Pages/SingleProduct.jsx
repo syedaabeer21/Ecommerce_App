@@ -7,6 +7,8 @@ import StarHalfIcon from '@mui/icons-material/StarHalf';
 import Button from '@mui/material/Button';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../config/redux/reducers/cartSlice';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 
 
 const SingleProduct = () => {
@@ -14,6 +16,7 @@ const SingleProduct = () => {
   console.log(id)
 
   const [prod,setProd]=useState(null)
+  const [message,setMessage] = useState(false)
 
   
   useEffect(()=>{
@@ -36,11 +39,17 @@ const SingleProduct = () => {
   const addtocartItem = () => {
     console.log(prod);
     dispatch(addItem(prod))
+    setMessage(true)
+    setTimeout(() => setMessage(false), 3000);
     
   }
   return (
     
     <>
+       {message && <Box className='container mt-3'> <Stack sx={{ width: '100%'  }} spacing={2}>
+      <Alert variant="filled" severity="success">
+        Item Added to Cart
+      </Alert></Stack></Box>}
      {prod &&(
       <Box className='shadow-lg p-5  rounded container d-flex flex-wrap justify-content-evenly my-5 ' sx={{height:'auto'}}>
         <Box className='d-flex align-item-center ' >

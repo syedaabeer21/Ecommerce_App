@@ -94,7 +94,7 @@ const Cart = () => {
           variant="h5"
           className="text-center mt-4 text-success fw-bold"
         >
-          Total Price: ${totalPrice.toFixed(2)}
+          Total Price: Rs {totalPrice.toFixed(2)}
         </Typography>
       )}
     </div>

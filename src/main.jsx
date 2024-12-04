@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'
 import {store} from '../src/config/redux/store/store.js';
 import Cart from './Pages/Cart.jsx'
+import Login from './Pages/Login.jsx'
 const router=createBrowserRouter([
   {
     path:'/',
@@ -17,6 +18,10 @@ const router=createBrowserRouter([
     children:[
     {
       path:'',
+      element:<Login/>
+    },
+    {
+      path:'products',
       element:<Products/>
     },
     {
